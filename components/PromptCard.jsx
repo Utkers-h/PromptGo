@@ -71,13 +71,13 @@ const PromptCard = ({ post, handleTagClick, handleEdit, handleDelete }) => {
                 Edit
               </p>   */}
             <a href="#_" class="relative inline-flex items-center justify-center p-2 px-4 py-2 overflow-hidden font-medium text-indigo-600 transition duration-300 ease-out border-2 border-emerald-500  rounded-full shadow-md group"
-             onClick ={handleEdit}>
+              onClick={handleEdit}>
               <span class="absolute inset-0 flex items-center justify-center w-full h-full text-white duration-300 -translate-x-full bg-emerald-500 group-hover:translate-x-0 ease">
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
               </span>
               <span class="absolute flex items-center justify-center w-full h-full green_gradient transition-all duration-300 transform group-hover:translate-x-full font-semibold ease cursor-pointer">Edit</span>
               <span class="relative invisible ">Edit</span>
-              
+
             </a>
 
             {/* <p className='font-inter text-sm orange_gradient cursor-pointer'
@@ -85,13 +85,13 @@ const PromptCard = ({ post, handleTagClick, handleEdit, handleDelete }) => {
               Delete
             </p> */}
             <a href="#_" class="relative inline-flex items-center justify-center p-2 px-4 py-2 overflow-hidden font-medium text-indigo-600 transition duration-300 ease-out border-2 border-orange-400  rounded-full shadow-md group"
-             onClick ={handleDelete}>
+              onClick={handleDelete}>
               <span class="absolute inset-0 flex items-center justify-center w-full h-full text-white duration-300 -translate-x-full bg-orange-400 group-hover:translate-x-0 ease">
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
               </span>
               <span class="absolute flex items-center justify-center w-full h-full  transition-all duration-300 transform group-hover:translate-x-full font-semibold ease orange_gradient cursor-pointer">Delete</span>
               <span class="relative invisible ">Delete</span>
-              
+
             </a>
 
           </div>

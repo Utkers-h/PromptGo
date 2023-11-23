@@ -1,5 +1,5 @@
 "use client"
-import {useState , useEffect} from 'react'
+import { useState, useEffect } from 'react'
 import PromptCard from './PromptCard'
 
 const PromptCardList = ({ data, handleTagClick }) => {
@@ -18,44 +18,44 @@ const PromptCardList = ({ data, handleTagClick }) => {
 };
 
 const Feed = () => {
-  const[posts,setPosts] =useState([]);
-  
+  const [posts, setPosts] = useState([]);
+
   // Search states
   const [searchText, setSearchText] = useState('');
 
-  const handleSearchChange =(e)=>{
+  const handleSearchChange = (e) => {
 
   }
   // From our feed we will have to make a get request to fetch the data, can be implemented by useEffect
 
-  useEffect(()=>{
-      const fetchPosts = async() =>{
-          const response = await fetch('/api/prompt');
-          const data = await response.json();
+  useEffect(() => {
+    const fetchPosts = async () => {
+      const response = await fetch('/api/prompt');
+      const data = await response.json();
 
-          setPosts(data);
-      }
-      fetchPosts();
-  },[]);
+      setPosts(data);
+    }
+    fetchPosts();
+  }, []);
 
   return (
     <section className='feed'>
       {/* Search box  */}
       <form className='relative w-full flex-center'>
-          <input
-              type='text'
-              placeholder='Search for a tag or a username'
-              value={searchText}
-              onChange={handleSearchChange}
-              required
-              className='search_input peer'
-          />
+        <input
+          type='text'
+          placeholder='Search for a tag or a username'
+          value={searchText}
+          onChange={handleSearchChange}
+          required
+          className='search_input peer'
+        />
       </form>
 
       {/* Prompt card section */}
       <PromptCardList
         data={posts}
-        handleTagClick={() => {}}
+        handleTagClick={() => { }}
       />
 
     </section>

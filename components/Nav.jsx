@@ -7,6 +7,7 @@ import { signIn, signOut, useSession, getProviders } from 'next-auth/react'
 
 const Nav = () => {
     const { data: session } = useSession();
+    
     // for checking whether user is logged in or not
     const isUserLoggedIn = true;
 
