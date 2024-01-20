@@ -14,6 +14,16 @@ const PromptCard = ({ post, handleTagClick, handleEdit, handleDelete }) => {
 
   const [copied, setCopied] = useState("");
 
+  // Viewing user Profiles
+  const handleProfileClick = () => {
+    console.log(post);
+
+    if (post.creator._id === session?.user.id) return router.push("/profile");
+
+    router.push(`/profile/${post.creator._id}?name=${post.creator.username}`);
+  };
+
+
   const handleCopy = () => {
     setCopied(post.prompt)
     navigator.clipboard.writeText(post.prompt);
@@ -23,7 +33,8 @@ const PromptCard = ({ post, handleTagClick, handleEdit, handleDelete }) => {
   return (
     <div className='prompt_card'>
       <div className='flex justify-between items-start gap-5'>
-        <div className='flex-1 flex justify-start items-center gap-3 cursor-pointer'>
+        <div className='flex-1 flex justify-start items-center gap-3 cursor-pointer'
+        onClick={handleProfileClick}>
           {/* containing the image of the author */}
           <Image
             src={post.creator.image}
@@ -49,6 +60,7 @@ const PromptCard = ({ post, handleTagClick, handleEdit, handleDelete }) => {
               ? '/assets/icons/tick.svg'
               : '/assets/icons/copy.svg'
             }
+            alt={copied === post.prompt ? "tick_icon" : "copy_icon"}
             width={12}
             height={12}
           />
